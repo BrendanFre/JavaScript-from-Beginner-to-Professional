@@ -1,11 +1,11 @@
-let unassigned;
-console.log(unassigned);
+let unassigned
+console.log(unassigned)
 
-let terribleThingToDo = undefined;
-let lastname;
-console.log("Same undefined:", lastname === terribleThingToDo);
+let terribleThingToDo = undefined
+let lastname
+console.log('Same undefined:', lastname === terribleThingToDo)
 
-let betterOption = null;
-console.log("Same null:", lastname === betterOption);
+let betterOption = null
+console.log('Same null:', lastname === betterOption)
 
-let empty = null;
+let empty = null
