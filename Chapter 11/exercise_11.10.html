@@ -21,7 +21,7 @@
 <script>
   let error = false;
     const theForm = document.querySelector('#theForm');
-    theForm.addEventListener('submit', (e) => {
+    theForm.addEventListener('submit', () => {
     valid()
     })
 
@@ -30,7 +30,6 @@
   }
   function valid(){
     console.log(theForm.children[0])
-      let message = ''
       if(document.querySelector('.first').value === "") {
         error = true;
         console.log('First name is missing.')
