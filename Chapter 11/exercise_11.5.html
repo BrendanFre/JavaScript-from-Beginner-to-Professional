@@ -13,6 +13,36 @@
     <div>
       <button class="btn3">Log</button>
     </div>
-    <script></script>
+    <script>
+      const log = [];
+      const output = document.querySelector(".output");
+      const textInput = document.querySelector("input");
+      const btn1 = document.querySelector(".btn1");
+      const btn2 = document.querySelector(".btn2");
+      const btn3 = document.querySelector(".btn3");
+
+      function eventLogging(eventObject) {
+        const target = eventObject.target;
+        const targetObj = {
+          value: textInput.value,
+          type: eventObject.type,
+          class: target.className,
+          tag: target.tagName,
+        };
+        output.textContent = target.value;
+        log.push(targetObj);
+        textInput.value = null;
+      }
+      btn1.addEventListener("click", (e) => {
+        eventLogging(e);
+      });
+      btn2.addEventListener("click", (e) => {
+        eventLogging(e);
+      });
+
+      btn3.addEventListener("click", () => {
+        console.log(log);
+      });
+    </script>
   </body>
 </html>
