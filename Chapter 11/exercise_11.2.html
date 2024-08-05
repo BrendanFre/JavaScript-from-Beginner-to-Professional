@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="blue">blue</div>
+    <div id='red'>red</div>
+    <div id='green'>green</div>
+    <div id='orange'>orange</div>
+    <div id='yellow'>yellow</div>
+    <script>
+        const colorArr = ['blue', 'red', 'green', 'orange', 'yellow'];
+        colorArr.forEach((element) =>{
+            document.querySelector(`#${element}`).addEventListener('click', () =>{
+                document.body.style.backgroundColor = element
+            })
+        })
+    </script>
+</body>
+</html>

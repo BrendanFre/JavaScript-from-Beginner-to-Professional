@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="selectMe"></div>
+
+    <script>
+        const divvy = document.querySelector('.selectMe');
+        divvy.textContent = 'hello world.';
+        divvy.style.width = '700px';
+        divvy.style.height = '700px';
+        divvy.style.backgroundColor = 'blue';
+
+        function handleEvent(color, eventObject) {
+            console.log(color);
+            console.log(eventObject.type);
+        }
+
+        divvy.addEventListener('mousedown', (e) => handleEvent('green', e))
+        divvy.addEventListener('mouseover', (e) => handleEvent('orange', e))
+        divvy.addEventListener('mouseout', (e) => handleEvent('black', e))
+        divvy.addEventListener('mouseup', (e) => handleEvent('pnk', e))
+
+    </script>
+</body>
+</html>
