@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="" method="post" id="theForm">
+    <label>First:
+        <input type="text" name="first" class="first">
+    </label><label>Last:
+    <input type="text" name="last" class="last">
+</label><label>Age:
+    <input type="text" name="age" class="age">
+</label>
+    <input type="submit" value="submit">
+</form>
+<script>
+  let error = false;
+    const theForm = document.querySelector('#theForm');
+    theForm.addEventListener('submit', (e) => {
+    valid()
+    })
+
+  function checker(string){
+    console.log(string.length)
+  }
+  function valid(){
+    console.log(theForm.children[0])
+      let message = ''
+      if(document.querySelector('.first').value === "") {
+        error = true;
+        console.log('First name is missing.')
+      } else if(
+        document.querySelector('.last').value === '') {
+        error = true;
+        console.log('Last name is missing.')
+      } else if(document.querySelector('.age').value  === ''){
+        console.log('Age is missing.')
+        error = true;
+    } else if(document.querySelector('.age').value < 19){
+        console.log('Too young')
+        error = true;
+      }else error = false
+    if(error){
+      theForm.preventDefault();
+    }
+  }
+</script>
+</body>
+</html>

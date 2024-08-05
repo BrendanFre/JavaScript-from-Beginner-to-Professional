@@ -22,12 +22,28 @@
     <div class="box">2</div>
     <script>
       const dragMe = document.querySelector("#dragme");
+      const boxes = document.querySelectorAll('.box')
       dragMe.addEventListener("dragstart", (e) => {
         e.target.style.opacity = "0.5";
       });
       dragMe.addEventListener("dragend", (e) => {
         e.target.style.opacity = "1";
       });
+      boxes.forEach(element => {
+        element.addEventListener('dragenter', (e) => {
+          e.target.classList.add('red');
+        })
+        element.addEventListener('dragleave', (e) => {
+          e.target.classList.remove('red');
+        })
+        element.addEventListener('dragover', (e) => {
+          e.preventDefault();
+        })
+        element.addEventListener('drop', (e) => {
+          if(e.target.classList.contains('box')){
+            e.target.appendChild(dragMe)
+          }});
+        })
     </script>
   </body>
 </html>
