@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .moveMe{
+            height: 20px;
+            width: 20px;
+            position: absolute;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<div class="moveMe">
+    Please move me.
+</div>
+
+<script>
+  const attributes = {
+    speed: 50,
+    direction: 1,
+    position: 0
+  }
+  const move = document.querySelector('.moveMe');
+
+    var counter = 30;
+    setInterval(handleInterval,1000, attributes )
+
+    function handleInterval(att){
+      counter--
+      console.log(counter)
+      const move = document.querySelector('.moveMe');
+      if(counter < 1){
+        clearInterval(0);
+      }
+      if(att.position > 800 || att.position < 0){
+        att.direction *= -1
+      }
+      att.position = att.position + (att.direction * att.speed);
+      move.style.left = att.position + 'px'
+      return counter
+
+    }
+
+    move.addEventListener('click', () =>{
+
+    })
+</script>
+
+</body>
+</html>
